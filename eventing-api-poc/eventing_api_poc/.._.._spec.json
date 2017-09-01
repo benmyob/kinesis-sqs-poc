@@ -1,0 +1,74 @@
+{
+    "basePath": "/v1",
+    "consumes": [
+        "application/json"
+    ],
+    "info": null,
+    "paths": {
+        "/api/kinesis/event": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Return response"
+                    }
+                },
+                "summary": "receive kinesis events",
+                "tags": "Method"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Return response"
+                    }
+                },
+                "summary": "send kinesis event",
+                "tags": "Method"
+            }
+        },
+        "/api/quote": {
+            "get": {
+                "parameters": [
+                    {
+                        "default": "john",
+                        "in": "query",
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return response"
+                    }
+                },
+                "summary": "testing",
+                "tags": "Method"
+            }
+        },
+        "/api/sqs/event": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Return response"
+                    }
+                },
+                "summary": "receive sqs events",
+                "tags": "Method"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Return response"
+                    }
+                },
+                "summary": "send sqs event",
+                "tags": "Method"
+            }
+        }
+    },
+    "produces": [
+        "application/json"
+    ],
+    "swagger": "2.0",
+    "title": "FALSY SIMPLE DEMO API",
+    "version": "0.1"
+}

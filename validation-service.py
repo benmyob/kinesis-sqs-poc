@@ -5,7 +5,6 @@ from datetime import datetime
 import random
 import calendar
 
-
 class QuoteResource:
     def on_get(self, req, resp):
         """Handles GET requests"""
@@ -76,6 +75,11 @@ class KinesisEventResource:
 
         resp.body = put_response
         resp.status = falcon.HTTP_200
+
+def get_quote(name):
+    return{
+        'get': name
+    }
 
 
 api = falcon.API()

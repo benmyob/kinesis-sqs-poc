@@ -1,0 +1,53 @@
+swagger: '2.0'
+info:
+title: FALSY SIMPLE DEMO API
+version: "0.1"
+consumes:
+- application/json
+produces:
+- application/json
+basePath: "/v1"
+paths:
+  '/api/quote':
+    get:
+      tags: Method
+      operationId: demo.get_quote
+      summary: testing
+      parameters:
+        - name: name
+          in: query
+          type: string
+          default: 'john'
+      responses:
+        200:
+          description: Return response
+  '/api/sqs/event':
+    get:
+      tags: Method
+      operationId: demo.event_sqs_get
+      summary: receive sqs events
+      responses:
+        200:
+          description: Return response
+    post:
+      tags: Method
+      operationId: demo.event_sqs_set
+      summary: send sqs event
+      responses:
+        200:
+          description: Return response
+  '/api/kinesis/event':
+    get:
+      tags: Method
+      operationId: demo.event_kinesis_get
+      summary: receive kinesis events
+      responses:
+        200:
+          description: Return response
+    post:
+      tags: Method
+      operationId: demo.event_kinesis_set
+      summary: send kinesis event
+      responses:
+        200:
+          description: Return response
