@@ -4,6 +4,7 @@ import boto3
 from datetime import datetime
 import random
 import calendar
+from falcon_cors import CORS
 
 class QuoteResource:
     def on_get(self, req, resp):
@@ -82,7 +83,9 @@ def get_quote(name):
     }
 
 
-api = falcon.API()
+cors = CORS(allow_origins_list=['http://127.0.0.1'])
+api = falcon.API(middleware=[cors.middleware])
+
 api.add_route('/api/quote', QuoteResource())
 api.add_route('/api/event', EventResource())
 api.add_route('/api/kinesis', KinesisEventResource())
