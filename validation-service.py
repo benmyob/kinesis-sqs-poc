@@ -83,7 +83,7 @@ def get_quote(name):
     }
 
 
-cors = CORS(allow_origins_list=['http://127.0.0.1'])
+cors = CORS(allow_origins_list=['http://127.0.0.1:5000'])
 api = falcon.API(middleware=[cors.middleware])
 
 api.add_route('/api/quote', QuoteResource())

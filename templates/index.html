@@ -29,7 +29,7 @@
 <script type=text/javascript src="{{url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
 <script>
     $('#btnSendSNSEvent').on('click', function(e){
-        $.get("http://127.0.0.1:8000/api/quote", function(data) {
+        $.getJSON("http://127.0.0.1:8000/api/quote", function(data) {
                 alert("Sending SNS Event")
         })
     })
